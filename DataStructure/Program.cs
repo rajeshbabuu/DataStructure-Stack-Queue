@@ -11,6 +11,8 @@
             objList.Enqueue(30);
             objList.Enqueue(70);
             objList.Display();
+            objList.Dequeue();
+            objList.Display();
         }
     }
 }
