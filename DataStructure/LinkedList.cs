@@ -16,41 +16,21 @@ namespace DataStructure
             this.head = null;
         }
 
-        public void Push(int data)
+        public void Enqueue(int data)
         {
             Node objNode = new Node(data);
-            if (head == null)
+            if (this.tail == null)
             {
-                objNode.next = null;
+                this.head = this.tail = objNode;
             }
             else
             {
-                objNode.next = head;
+                this.tail.next = objNode;
+                this.tail = objNode;
             }
-            head = objNode;
-            Console.WriteLine($"\n{data} pushed to Stack");
+            Console.WriteLine($"\n{data} inserted into Queue");
         }
 
-        public void Peek()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("\nNot Possible");
-                return;
-            }
-            Console.WriteLine($"\n{head.data} is on top of the Stack");
-        }
-
-        public void Pop()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("\nNot Possible");
-                return;
-            }
-            Console.WriteLine($"\nPopped {head.data}");
-            head = head.next;
-        }
 
         public void Display()
         {
